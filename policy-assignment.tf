@@ -68,8 +68,9 @@ resource "azurerm_policy_definition" "sa-naming-convention" {
   )
 }
 
+// Policy assignment to a subscription and using parameter default values
 resource "azurerm_subscription_policy_assignment" "demo" {
-  name                 = "Storage Accounts should following naming convention (demo subscription)"
+  name                 = "storage-account-naming-standard-demo"
   policy_definition_id = azurerm_policy_definition.sa-naming-convention.id
   subscription_id      = "/subscriptions/00000000-0000-0000-000000000000"
 }
